@@ -77,7 +77,7 @@ gulp.task('default',['styles'],function(){
 			baseDir: ["./"]
 		}
 	})
-	gulp.watch([['app/js/components/**','app/js/utils/**'],['lint'])
+	gulp.watch(['app/js/components/**','app/js/utils/**'],['lint']);
 	gulp.watch('sass/**/*.scss',['styles']);
 	gulp.watch('*.html').on('change',reload);
 	gulp.watch('app/js/*.js').on('change',reload);
