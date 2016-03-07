@@ -65,7 +65,7 @@ gulp.task('uglify',function(){
 })
 
 gulp.task('lint',function(){
-	return gulp.src(['app/js/**','!node_modules/**'])
+	return gulp.src(['app/js/components/**','app/js/utils/**','!node_modules/**'])
 		 .pipe(eslint())
 		 .pipe(eslint.format())
 		 .pipe(eslint.failAfterError());
@@ -77,7 +77,8 @@ gulp.task('default',['styles'],function(){
 			baseDir: ["./"]
 		}
 	})
-	gulp.watch('sass/**/*.scss',["styles"]);
+	gulp.watch([['app/js/components/**','app/js/utils/**'],['lint'])
+	gulp.watch('sass/**/*.scss',['styles']);
 	gulp.watch('*.html').on('change',reload);
 	gulp.watch('app/js/*.js').on('change',reload);
 })
