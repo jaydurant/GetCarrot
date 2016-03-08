@@ -1,0 +1,17 @@
+
+.doctor-section{
+	@include rem("margin",1);
+	background-color: $menu-background;	
+}
+
+.doctor-image{
+	@include margin-auto();
+	@include roundedCorners(50);
+	display: block;
+
+	
+}
+
+.doctor-caption{
+	@include align(center);
+}

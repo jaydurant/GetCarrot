@@ -1,0 +1,19 @@
+
+.menu-links{
+	border-top: 1px #F8F5F2 solid;
+
+	a{
+		@include rem("font-size",30);
+		@include rem("padding",10,0,10,10);
+		background-color: $menu-background;
+		text-decoration: none;
+		display: block;
+		color: black;
+		transition: all 0.3s;
+
+			&:hover,&:focus{
+				color:white;
+				background-color: $menu-hover;
+			}
+	}
+}

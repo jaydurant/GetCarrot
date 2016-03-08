@@ -1,0 +1,20 @@
+.chat-container{
+	height: $full-height;
+}
+
+.chat-thread{
+	height: $full-height;
+	border:3px solid red;
+	background-color:white;
+	position:relative;
+}
+
+.chat-callresponse{
+	height:80%;
+	overflow:scroll;
+}
+
+.chat-userOptions{
+	border:1px solid red;
+	height:20%;
+}
