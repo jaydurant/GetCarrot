@@ -1,17 +1,28 @@
 
 .doctor-section{
-	@include rem("margin",1);
-	background-color: $menu-background;	
+	background-color: #284254;
+	@include roundedCorners(20);
+	@include rem("margin-top",5);
+
+	p{
+		@include rem("font-size",20);
+		color:white;	
+		text-align:center;
+	}	
 }
 
 .doctor-image{
 	@include margin-auto();
 	@include roundedCorners(50);
 	display: block;
-
-	
 }
 
 .doctor-caption{
 	@include align(center);
+	color:white;
+
+	p{
+		@include rem("font-size",17);
+	}
+
 }

@@ -1,33 +1,88 @@
 .chat-container{
 	height: $full-height;
+	padding-left:5px;
+
 }
 
 .chat-thread{
+    @include roundedCorners(20);
 	height: $full-height;
-	border:3px solid red;
-	background-color:white;
+	background-color:#284254;
 	position:relative;
+
 }
 
 .chat-callresponse{
 	height:80%;
 	overflow:scroll;
+	position:relative;
 }
 
+.chat-scroll-container{
+	position:absolute;
+	overflow:scroll;
+	bottom:0;
+}
+
+
 .chat-message-bot{
-	background-color:pink;
+	@include rem("padding",10,10,10,5);
+	@include rem("margin",0,10,10,10);
+	@include roundedCorners(20);
+	display:inline-block;
+	background-color:#23A084;
+	max-width:50%;
+	font-weight:600;
+	font-size:14;
+	color:white;
+
+}
+
+.chat-message-containerBot{
+	position:relative;
+	top:60%;
+}
+
+.chat-message-containerUser{
+	@extend .chat-message-containerBot;
+	text-align:right;
 }
 
 .chat-message-user{
-	background-color:blue;
+	@include rem("padding",10,10,10,5);
+	@include rem("margin",0,10,10,0);
+	@include roundedCorners(20);
+	display:inline-block;
+	background-color: #E83B3B;
+	max-width:50%;
+	font-weight:600;
+	font-size:14;
+	color:white;
 }
 
 .chat-userOptions{
-	border:1px solid red;
 	height:20%;
+	text-align:center;
+	border-top: 1px solid white;
 }
 
+.chat-userOptions button:last-of-type{
+	margin-left:1%;
+} 
+
 .chat-optionButton{
-	
+	@include rem("margin-top",10);
+	@include rem("font-size",15);
+	@include rem("padding",15,15,15,15);
+	@include roundedCorners(10);
+	border:none;
+	color:white;
+	font-weight:500;
+	background-color:#E83B3B;
+
+	&:hover,&:focus{
+		background-color:#F5C75B;
+		outline:none;
+	}
 }
 

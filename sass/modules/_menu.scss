@@ -1,19 +1,36 @@
 
+
+
 .menu-links{
-	border-top: 1px #F8F5F2 solid;
 
 	a{
-		@include rem("font-size",30);
+		@include rem("font-size",20);
 		@include rem("padding",10,0,10,10);
-		background-color: $menu-background;
+		background-color: #284254;
 		text-decoration: none;
 		display: block;
-		color: black;
+		color: white;
 		transition: all 0.3s;
 
 			&:hover,&:focus{
-				color:white;
-				background-color: $menu-hover;
+				color:black;
+				background-color: #6171A0;
 			}
 	}
 }
+
+.menu-links:first-of-type a{
+	border-radius: 20px 20px 0 0;
+}
+
+.menu-links:last-of-type a{
+	border-radius: 0 0 20px 20px;
+}
+
+.fa{
+	margin-right:2%;
+}
+
+
+
+

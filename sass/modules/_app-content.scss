@@ -1,4 +1,7 @@
+
+
 .app-container{
 	background-color: $app-background;
 	overflow:auto;
+	@include rem("padding",5,5,5,5);
 }

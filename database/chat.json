@@ -1,0 +1,142 @@
+{
+	"1":{
+		"message" : ["Hi there.",
+			"This is Carrot, where we can have a conversation about egg freezing. My name is Jessie. I know a lot about this topic and learn more every day. I’ll send you messages, and you respond by choosing one of the buttons below. Sound good?"
+		],
+		"button" : [
+			{"text" : "Yep. Let’s do it.", "next" : "3"},
+			{"text" : "Meh, I guess.", "next" : "4"}
+		],
+		"type" : "bot"
+	},
+	"3":{
+		"message" : [
+			"Cool. Want to start with the basics? Like, how does egg freezing work?"
+		],
+		"button" : [
+			{"text" : "Sounds good", "next" : "5"},
+			{"text" : "Nah, I already know", "next" : "6"}
+		],
+		"type" : "bot"
+	},
+	"4":{
+		"message" : [
+			"You sound skeptical. Is it because I’m a robot? Don’t be afraid to hurt my feelings..."
+		],
+		"button" : [
+			{"text" : "Yes", "next" : "8"},
+			{"text" : "Nah, it’s all good", "next" : "7"}
+		],
+		"type" : "bot"
+	},
+	"5":{
+		"message" : [
+			"Women typically produce one mature egg each month during ovulation. During egg freezing, she takes medicine to stimulate her ovaries to safely produce more. On the last day of treatment, her doctor will retrieve the eggs while she’s sedated, and an embryologist will identify ones that are mature enough to freeze. Younger eggs have better chances of leading to a successful pregnancy than older ones in general, so more and more women are taking advantage of this technology."
+		],
+		"button" : [
+			{"text" : "What’s a ‘mature' egg?", "next" : "11"},
+			{"text" : "Tell me more", "next" : "10"},
+			{"text" : "Got it.", "next" : "12"}
+		],
+		"type" : "bot"
+	},
+	"6":{
+		"message" : [
+			"Nice! That's awesome."
+		],
+		"button" : [
+			{"text" : "Next", "next" : "7"}
+		],
+		"type" : "bot"
+	},
+	"7":{
+		"message" : [
+			"Okay. Let’s talk about what some experts say about the best time to freeze. According to a June 2015 study, doctors found that egg freezing increases the live birth rate across all categories of age and relationship status. Also, they found that freezing eggs before the age of 34 best increases the chance of live birth."
+		],
+		"button" : [
+			{"text" : "Uh, what is ‘live birth rate’?", "next" : "9"},
+			{"text" : "Next", "next" : "12"}
+		],
+		"type" : "bot"
+	},
+	"8":{
+		"message" : [
+			"Well, I can process information faster than my human coworkers at Carrot. So I help them deliver high-quality insights, news, and recommendations about egg freezing."
+		],
+		"button" : [
+			{"text" : "Got it.", "next" : "3"}
+		],
+		"type" : "bot"
+	},
+	"9":{
+		"message" : [
+			"This is a kind-of creepy sounding medical term referring to the percentage of cycles that lead to a baby born alive."
+		],
+		"button" : [
+			{"text" : "Got it.", "next" : "12"}
+		],
+		"type" : "bot"
+	},
+	"10":{
+		"message" : [
+			"It can take 8-12 days of medication before her doctor is ready to do the retrieval--but each woman’s doctor will know best. She’ll check-in regularly for brief monitoring appointments at the doctor’s office to track progress. Most often, these appointments are in the morning."
+		],
+		"button" : [
+			{"text" : "Next", "next" : "12"}
+		],
+		"type" : "bot"
+	},
+	"11":{
+		"message" : [
+			"A mature egg is one that can lead to a successful pregnancy. An immature egg hasn't developed enough to do so, which is why those eggs are not frozen. Mature eggs, FTW. "
+		],
+		"button" : [
+			{"text" : "Next", "next" : "12"}
+		],
+		"type" : "bot"
+	},
+	"12":{
+		"message" : [
+			"A lot of women want to know how her eggs translate into chances of a successful pregnancy if/when she uses them later. While a doctor will give the best prediction, most doctors agree that this depends primarily on two factors: the the age of the egg when freezing, and the number of eggs retrieved. So, younger eggs > older eggs; and more > fewer."
+		],
+		"button" : [
+			{"text" : "More", "next" : "14"}
+		],
+		"type" : "bot"
+	},
+	"13":{
+		"message" : [
+			"But this is highly personalized for each woman. Other factors like smoking and period (ir)regularity can make a big difference, so the final verdict should come from her fertility doctor."
+		],
+		"button" : [
+			{"text" : "Next", "next" : "14"}
+		],
+		"type" : "bot"
+	},
+	"14":{
+		"message" : [
+			"Want to join our waiting list? We are working as fast as possible to deliver more insights, news and doctor recommendations in your area."
+		],
+		"button" : [
+			{"text" : "Yes", "next" : "16"},
+			{"text" : "Not now", "next" : "17"}
+		],
+		"type" : "bot"
+	},
+	"15":{
+		"message" : [
+			"Cool. What’s your email?"
+		],
+		"button" : [
+			{"text" : "alert", "next" : "16"}
+		],
+		"type" : "bot"
+	},
+	"16":{
+		"message" : [
+			"K. Thanks! Feel free to come back to chat again anytime."
+		],
+		"type" : "bot"
+	}
+
+}
