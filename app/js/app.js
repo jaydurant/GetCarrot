@@ -22,30 +22,7 @@ function renderPage() {
 	(0, _reactDom.render)(_react2.default.createElement(_appContainer2.default, null), appRootElement);
 }
 
-},{"./components/app-container":3,"babel-polyfill":9,"react":450,"react-dom":294}],2:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function AcceptButton() {
-	return _react2.default.createElement(
-		"button",
-		{ type: "button", className: "chat-acceptButton" },
-		"yes"
-	);
-}
-
-exports.default = AcceptButton;
-
-},{"react":450}],3:[function(require,module,exports){
+},{"./components/app-container":2,"babel-polyfill":9,"react":450,"react-dom":294}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -87,7 +64,7 @@ var AppContainer = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(AppContainer).call(this, props));
 
 		_this.state = {
-			car: 'car',
+			chatArray: [],
 			doctor: { image: 'assets/doctor-headshot.png', name: 'Dr. Ahmad' }
 		};
 		return _this;
@@ -124,7 +101,7 @@ var AppContainer = function (_React$Component) {
 
 exports.default = AppContainer;
 
-},{"./chat-thread":4,"./doctor-content":5,"./menu-container":6,"react":450}],4:[function(require,module,exports){
+},{"./chat-thread":3,"./doctor-content":5,"./menu-container":6,"react":450}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -135,13 +112,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _acceptButton = require('./accept-button');
+var _userButton = require('./user-button');
 
-var _acceptButton2 = _interopRequireDefault(_acceptButton);
+var _userButton2 = _interopRequireDefault(_userButton);
 
-var _rejectButton = require('./reject-button');
+var _chatmessageBot = require('./chatmessage-bot');
 
-var _rejectButton2 = _interopRequireDefault(_rejectButton);
+var _chatmessageBot2 = _interopRequireDefault(_chatmessageBot);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -152,20 +129,42 @@ function ChatThread() {
 		_react2.default.createElement(
 			'div',
 			{ className: 'chat-callresponse' },
-			'chat'
+			'hey'
 		),
 		_react2.default.createElement(
 			'div',
 			{ className: 'chat-userOptions' },
-			_react2.default.createElement(_acceptButton2.default, null),
-			_react2.default.createElement(_rejectButton2.default, null)
+			'buttons'
 		)
 	);
 }
 
 exports.default = ChatThread;
 
-},{"./accept-button":2,"./reject-button":8,"react":450}],5:[function(require,module,exports){
+},{"./chatmessage-bot":4,"./user-button":8,"react":450}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ChatMessageBot(props) {
+	return _react2.default.createElement(
+		"div",
+		{ className: "chat-message-bot" },
+		props.text
+	);
+}
+
+exports.default = ChatMessageBot;
+
+},{"react":450}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -276,15 +275,15 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function RejectButton() {
+function AcceptButton(props) {
 	return _react2.default.createElement(
 		"button",
-		{ type: "button", className: "chat-rejectButton" },
-		"no"
+		{ type: "button", className: "chat-optionButton" },
+		props.text
 	);
 }
 
-exports.default = RejectButton;
+exports.default = AcceptButton;
 
 },{"react":450}],9:[function(require,module,exports){
 (function (global){

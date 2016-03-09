@@ -8,13 +8,17 @@ class AppContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			car: 'car',
+			chatArray: [],
 			doctor: {image: 'assets/doctor-headshot.png', name: 'Dr. Ahmad'},
 		};
 	}
 
 	componentDidMount() {
 
+	}
+
+	onUserChoiceClick(step,event){
+		
 	}
 	//
 	render() {
