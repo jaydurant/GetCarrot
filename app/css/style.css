@@ -276,10 +276,13 @@ button {
   border: none;
   color: white;
   font-weight: 500;
-  background-color: #E83B3B; }
+  background-color: #E83B3B;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
   .doctor-button:hover, .doctor-button:focus {
     background-color: #F5C75B;
-    outline: none; }
+    outline: none;
+    color: black; }
 
 @media only screen and (max-width: 600px) {
   .doctor-section {
@@ -323,6 +326,13 @@ button {
   color: white;
   position: relative; }
 
+.chat-message-bot-gif {
+  max-width: 80%;
+  max-height: 80%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto; }
+
 .chat-message-containerBot, .chat-message-containerUser {
   position: relative;
   top: 60%; }
@@ -362,10 +372,13 @@ button {
   border: none;
   color: white;
   font-weight: 500;
-  background-color: #E83B3B; }
+  background-color: #E83B3B;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
   .chat-optionButton:hover, .chat-optionButton:focus {
     background-color: #F5C75B;
-    outline: none; }
+    outline: none;
+    color: black; }
 
 .chat-message-slidein-left {
   -webkit-animation: 0.6s linear 0s slidein-left;

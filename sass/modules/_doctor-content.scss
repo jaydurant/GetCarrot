@@ -40,10 +40,12 @@
 	color:white;
 	font-weight:500;
 	background-color:#E83B3B;
+	transition:all 0.5s;
 
 	&:hover,&:focus{
 		background-color:#F5C75B;
 		outline:none;
+		color:black;
 	}
 }
 

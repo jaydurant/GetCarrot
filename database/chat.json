@@ -42,7 +42,8 @@
 	},
 	"6":{
 		"message" : [
-			"Nice! That's awesome."
+			"Nice! That's awesome.",
+			"./assets/section6.gif"
 		],
 		"button" : [
 			{"text" : "Next", "next" : "7","key":"6a"}
@@ -61,7 +62,8 @@
 	},
 	"8":{
 		"message" : [
-			"Well, I can process information faster than my human coworkers at Carrot. So I help them deliver high-quality insights, news, and recommendations about egg freezing."
+			"Well, I can process information faster than my human coworkers at Carrot. So I help them deliver high-quality insights, news, and recommendations about egg freezing.",
+			"./assets/section8.gif"
 		],
 		"button" : [
 			{"text" : "Got it.", "next" : "3","key":"8a"}
@@ -70,7 +72,8 @@
 	},
 	"9":{
 		"message" : [
-			"This is a kind-of creepy sounding medical term referring to the percentage of cycles that lead to a baby born alive."
+			"This is a kind-of creepy sounding medical term referring to the percentage of cycles that lead to a baby born alive.",
+			"./assets/section9.gif"
 		],
 		"button" : [
 			{"text" : "Got it.", "next" : "12","key":"9a"}
@@ -97,7 +100,8 @@
 	},
 	"12":{
 		"message" : [
-			"A lot of women want to know how her eggs translate into chances of a successful pregnancy if/when she uses them later. While a doctor will give the best prediction, most doctors agree that this depends primarily on two factors: the the age of the egg when freezing, and the number of eggs retrieved. So, younger eggs > older eggs; and more > fewer."
+			"A lot of women want to know how her eggs translate into chances of a successful pregnancy if/when she uses them later. While a doctor will give the best prediction, most doctors agree that this depends primarily on two factors: the the age of the egg when freezing, and the number of eggs retrieved. So, younger eggs > older eggs; and more > fewer.",
+			"./assets/section12.gif"
 		],
 		"button" : [
 			{"text" : "More", "next" : "14","key":"12a"}
@@ -115,7 +119,8 @@
 	},
 	"14":{
 		"message" : [
-			"Want to join our waiting list? We are working as fast as possible to deliver more insights, news and doctor recommendations in your area."
+			"Want to join our waiting list? We are working as fast as possible to deliver more insights, news and doctor recommendations in your area.",
+			"./assets/section14.gif"
 		],
 		"button" : [
 			{"text" : "Yes", "next" : "16","key":"14a"},
