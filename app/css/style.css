@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .doctor-button, .chat-optionButton {
   border-radius: 5px;
   border: none;
@@ -24,6 +25,71 @@
 
 .doctor-section, .chat-thread {
   box-shadow: 1px 1px 2px 1px #ac9bb9; }
+
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("./fontawesome-webfont.eot?v=4.5.0");
+  src: url("./fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("./fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("./fontawesome-webfont.woff?v=4.5.0") format("woff"), url("./fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("./fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px / 1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eee;
+  border-radius: .1em; }
+
+.fa-pull-left {
+  float: left; }
+
+.fa-pull-right {
+  float: right; }
+
+.fa.fa-pull-left {
+  margin-right: .3em; }
+
+.fa.fa-pull-right {
+  margin-left: .3em; }
+
+/* Deprecated as of 4.4.0 */
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.fa.pull-left {
+  margin-right: .3em; }
+
+.fa.pull-right {
+  margin-left: .3em; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-user:before {
+  content: ""; }
+
+.fa-bullhorn:before {
+  content: ""; }
+
+.fa-calendar:before {
+  content: ""; }
+
+.fa-credit-card:before {
+  content: ""; }
 
 * {
   box-sizing: border-box;
