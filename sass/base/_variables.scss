@@ -15,7 +15,7 @@ $regularSize: 12;
 // ----------------------------------------------------------------------
 	// Font Families
 // ----------------------------------------------------------------------
-$helvetica: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$helvetica: 'Ubuntu', sans-serif;;
 
 // ----------------------------------------------------------------------
   // Grid
@@ -27,8 +27,10 @@ $full-width: 100%;
 // ----------------------------------------------------------------------
   // Colors
 // ----------------------------------------------------------------------
-$menu-background: white;
-$container-background: rgba(232, 133, 63, 0.15);
-$app-background: white;
+$menu-background: rgba(57, 9, 99, 0.84);
+$container-background: white;
+$app-background: #efefef;
 $menu-hover: #f9d8ce;
 $text-color: #f8f5f2;
+$border-gold: #f98a01;
+$border-content: 1px solid $border-gold;

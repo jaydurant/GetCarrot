@@ -23,3 +23,27 @@
 %right {
   float: right;
 }
+
+%buttonBasic{
+	@include roundedCorners(5);
+	border:none;
+	color:white;
+	font-weight:500;
+	background-color:#f98a01;
+	transition:all 0.5s;
+}
+
+%chatMessageBasic{
+	@include rem("padding",10,10,10,5);
+	@include roundedCorners(20);
+	@include inline-block();
+	max-width:50%;
+	font-weight:600;
+	font-size:14;
+	color:white;
+	position:relative;
+}
+
+%section-shadow{
+	@include box-shadow(1px, 1px, 2px, 1px, #ac9bb9);
+}

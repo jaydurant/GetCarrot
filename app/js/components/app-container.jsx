@@ -60,12 +60,14 @@ class AppContainer extends React.Component {
 		return (
 				<div className="container app-container">
 					<MenuContainer toggle={this.state.menuToggle} clickToggle={this.menuToggle.bind(this)} />
-					<section className="one-half-m doctor-container">
-						<DoctorContent doctor={this.state.doctor} />
-					</section>
-					<section className="one-half-m chat-container">
-						<ChatThread chat={this.state.chatArray} onchoice={this.onUserChoiceClick.bind(this)} />
-					</section>
+					<div className="app-content">
+						<section className="one-half-m doctor-container">
+							<DoctorContent doctor={this.state.doctor} />
+						</section>
+						<section className="one-half-m chat-container">
+							<ChatThread chat={this.state.chatArray} onchoice={this.onUserChoiceClick.bind(this)} />
+						</section>
+					</div>
 				</div>
 			);
 	}

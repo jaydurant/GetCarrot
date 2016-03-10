@@ -4,10 +4,10 @@
 
 
 .doctor-section{
-	background-color: $container-background;
-	@include roundedCorners(10);
+	@extend %section-shadow;
+	@include roundedCorners(5);
 	@include rem("margin-top",5);
-	border: 1px solid grey;
+	background-color: $container-background;
 
 	p{
 		@include rem("font-size",20);
@@ -16,15 +16,29 @@
 	}	
 }
 
+.doctor-section div:first-child{
+	@include roundedCorners(20);
+}
+
 .doctor-image{
 	@include margin-auto();
-	@include roundedCorners(100);
-	display: block;
+	@include roundedCorners(10);
+	display:block;
+	width:100%;
+	height:auto;
+
+}
+
+@include min-breakpoint($sassyMed){
+	.doctor-image{
+		max-width:50%;
+	}
 }
 
 .doctor-caption{
 	@include align(center);
 	color:white;
+	border-top:1px solid $border-gold;
 
 	p{
 		@include rem("font-size",17);
@@ -33,14 +47,11 @@
 }
 
 .doctor-button{
+	@extend %buttonBasic;
 	@include rem("margin",10,0);
 	@include rem("font-size",18);
 	@include rem("padding",15,70);
-	border:none;
-	color:white;
-	font-weight:500;
-	background-color:#E83B3B;
-	transition:all 0.5s;
+	
 
 	&:hover,&:focus{
 		background-color:#F5C75B;

@@ -181,14 +181,18 @@ var AppContainer = function (_React$Component) {
 				{ className: 'container app-container' },
 				_react2.default.createElement(_menuContainer2.default, { toggle: this.state.menuToggle, clickToggle: this.menuToggle.bind(this) }),
 				_react2.default.createElement(
-					'section',
-					{ className: 'one-half-m doctor-container' },
-					_react2.default.createElement(_doctorContent2.default, { doctor: this.state.doctor })
-				),
-				_react2.default.createElement(
-					'section',
-					{ className: 'one-half-m chat-container' },
-					_react2.default.createElement(_chatThread2.default, { chat: this.state.chatArray, onchoice: this.onUserChoiceClick.bind(this) })
+					'div',
+					{ className: 'app-content' },
+					_react2.default.createElement(
+						'section',
+						{ className: 'one-half-m doctor-container' },
+						_react2.default.createElement(_doctorContent2.default, { doctor: this.state.doctor })
+					),
+					_react2.default.createElement(
+						'section',
+						{ className: 'one-half-m chat-container' },
+						_react2.default.createElement(_chatThread2.default, { chat: this.state.chatArray, onchoice: this.onUserChoiceClick.bind(this) })
+					)
 				)
 			);
 		}
@@ -375,20 +379,15 @@ function DoctorContent(props) {
 		_react2.default.createElement(
 			"div",
 			null,
-			_react2.default.createElement(
-				"p",
-				null,
-				"Hi! I'm " + props.doctor.name + ", your Fertility Coach."
-			),
-			_react2.default.createElement("img", { className: "doctor-image", src: props.doctor.image, alt: props.doctor.name + " image", width: "150", height: "150" })
+			_react2.default.createElement("img", { className: "doctor-image", src: props.doctor.image, alt: props.doctor.name + " image", width: "370", height: "240" })
 		),
 		_react2.default.createElement(
 			"div",
 			{ className: "doctor-caption" },
 			_react2.default.createElement(
 				"p",
-				{ className: "one-half-s" },
-				"I am a specialist in fertility. I'm here to answer your questions about egg freezing or general fertility health.  If you message me, I'll respond within a day, if not sooner."
+				{ className: "full-width-s" },
+				"Hi! I'm " + props.doctor.name + ", your Fertility Coach.  I am a specialist in fertility. I'm here to answer your questions about egg freezing or general fertility health.  If you message me, I'll respond within a day, if not sooner. "
 			),
 			_react2.default.createElement(
 				"div",

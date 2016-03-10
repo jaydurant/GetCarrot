@@ -1,6 +1,6 @@
 .navigation-content{
-	background-color:white;
-	border-bottom: 1px solid gold;
+	background-color:$menu-background;
+	border-bottom: 2px solid $border-gold;
 	position:relative;
 
 	img{
@@ -33,7 +33,7 @@
 		@include rem("padding",12,10);
 		text-decoration: none;
 		display: block;
-		color: #FCA001;
+		color: #fca001;
 		transition: all 0.3s;
 
 			&:hover,&:focus{
@@ -100,7 +100,7 @@
 		li{
 			display:block;
 			background-color:white;
-			border-top:1px solid gold;
+			border-top:1px solid $border-gold;
 		}
 	}
 }
