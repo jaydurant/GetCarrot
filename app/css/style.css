@@ -325,6 +325,11 @@ button {
   font-size: 14;
   color: white;
   position: relative; }
+  .chat-message-bot img {
+    border-radius: 10px; }
+
+.chat-message-image {
+  min-width: 210px; }
 
 .chat-message-bot-gif {
   max-width: 80%;

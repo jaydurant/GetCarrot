@@ -25,7 +25,6 @@
 	bottom:0;
 }
 
-
 .chat-message-bot{
 	@include rem("padding",10,10,10,5);
 	@include rem("margin",0,10,10,10);
@@ -38,6 +37,14 @@
 	color:white;
 	position:relative;
 
+	img{
+		@include roundedCorners(10);
+	}
+
+}
+
+.chat-message-image{
+	min-width:210px;
 }
 
 .chat-message-bot-gif{

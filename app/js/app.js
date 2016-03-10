@@ -293,8 +293,8 @@ function ChatMessageBotGif(props) {
 		{ className: "chat-message-containerBot" },
 		_react2.default.createElement(
 			"div",
-			{ className: "chat-message-bot chat-message-slidein-left" },
-			_react2.default.createElement("img", { src: props.src, width: "220", height: "150" })
+			{ className: "chat-message-bot chat-message-slidein-left chat-message-image" },
+			_react2.default.createElement("img", { src: props.src, width: "200", height: "150" })
 		)
 	);
 }
