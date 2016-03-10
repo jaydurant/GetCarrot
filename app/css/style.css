@@ -148,7 +148,22 @@ button {
 
 .navigation-content {
   background-color: white;
-  border-bottom: 1px solid gold; }
+  border-bottom: 1px solid gold;
+  position: relative; }
+  .navigation-content img {
+    width: 200px;
+    height: 50px; }
+
+.navigation-toggle {
+  display: none; }
+
+.navigation-image {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  width: 20%; }
 
 .menu-list {
   display: -moz-inline-stack;
@@ -156,7 +171,7 @@ button {
   vertical-align: top;
   zoom: 1;
   *display: inline;
-  width: 70%;
+  width: 80%;
   text-align: right; }
 
 .menu-links {
@@ -173,12 +188,58 @@ button {
     padding: 0.75rem 0.625rem;
     text-decoration: none;
     display: block;
-    color: black;
+    color: #FCA001;
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
     .menu-links a:hover, .menu-links a:focus {
       color: white;
       background-color: rgba(255, 188, 0, 0.4); }
+
+@media only screen and (max-width: 800px) {
+  .navigation-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 224px; }
+  .navigation-toggle {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+    position: absolute;
+    height: 50px;
+    width: 40px;
+    color: black;
+    left: 1%;
+    cursor: pointer; }
+  .navigation-toggle-open .navigation-toggle {
+    background-image: url(../../assets/ic_close_24px.svg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .navigation-toggle-open .menu-list {
+    bottom: -200px; }
+  .navigation-toggle-close .navigation-toggle {
+    background-image: url(../../assets/ic_menu_24px.svg);
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .navigation-toggle-close .menu-list {
+    bottom: 200px; }
+  .menu-list {
+    position: absolute;
+    display: block;
+    width: 100%;
+    z-index: 3;
+    -webkit-transition: 1s all;
+    transition: 1s all; }
+    .menu-list li {
+      display: block;
+      background-color: white;
+      border-top: 1px solid gold; } }
+
+.doctor-container {
+  padding: 0px 5px;
+  padding: 0rem 0.3125rem; }
 
 .doctor-section {
   background-color: rgba(232, 133, 63, 0.15);
@@ -220,11 +281,16 @@ button {
     background-color: #F5C75B;
     outline: none; }
 
+@media only screen and (max-width: 600px) {
+  .doctor-section {
+    display: none; } }
+
 .chat-container {
-  height: 100%;
-  padding-left: 5px;
+  padding: 0px 5px;
+  padding: 0rem 0.3125rem;
   margin-top: 5px;
-  margin-top: 0.3125rem; }
+  margin-top: 0.3125rem;
+  height: 100%; }
 
 .chat-thread {
   border-radius: 10px;
@@ -254,7 +320,8 @@ button {
   max-width: 50%;
   font-weight: 600;
   font-size: 14;
-  color: white; }
+  color: white;
+  position: relative; }
 
 .chat-message-containerBot, .chat-message-containerUser {
   position: relative;
@@ -274,7 +341,8 @@ button {
   max-width: 50%;
   font-weight: 600;
   font-size: 14;
-  color: white; }
+  color: white;
+  position: relative; }
 
 .chat-userOptions {
   height: 20%;
@@ -298,3 +366,35 @@ button {
   .chat-optionButton:hover, .chat-optionButton:focus {
     background-color: #F5C75B;
     outline: none; }
+
+.chat-message-slidein-left {
+  -webkit-animation: 0.6s linear 0s slidein-left;
+          animation: 0.6s linear 0s slidein-left; }
+
+@-webkit-keyframes slidein-left {
+  from {
+    right: 100%; }
+  to {
+    right: 0; } }
+
+@keyframes slidein-left {
+  from {
+    right: 100%; }
+  to {
+    right: 0; } }
+
+.chat-message-slidein-right {
+  -webkit-animation: 0.4s linear 0s slidein-right;
+          animation: 0.4s linear 0s slidein-right; }
+
+@-webkit-keyframes slidein-right {
+  from {
+    left: 100%; }
+  to {
+    left: 0; } }
+
+@keyframes slidein-right {
+  from {
+    left: 100%; }
+  to {
+    left: 0; } }

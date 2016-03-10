@@ -9,8 +9,7 @@ function DoctorContent(props) {
 			</div>
 			<div className="doctor-caption">
 				<p className="one-half-s">
-					 I am a specialist in fertility. You can message me with questions
-					and I'll respond to you by text within the day.
+					 I am a specialist in fertility. I'm here to answer your questions about egg freezing or general fertility health.  If you message me, I'll respond within a day, if not sooner. 
 				</p>
 				<div>
 					<button className="doctor-button" type="button">Enter Private Chat</button>

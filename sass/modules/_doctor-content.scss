@@ -1,3 +1,7 @@
+.doctor-container{
+	@include rem("padding",0,5);
+}
+
 
 .doctor-section{
 	background-color: $container-background;
@@ -40,5 +44,11 @@
 	&:hover,&:focus{
 		background-color:#F5C75B;
 		outline:none;
+	}
+}
+
+@include breakpoint($sassySmall){
+	.doctor-section{
+		display:none;
 	}
 }

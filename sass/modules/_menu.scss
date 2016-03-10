@@ -1,12 +1,26 @@
 .navigation-content{
 	background-color:white;
 	border-bottom: 1px solid gold;
+	position:relative;
+
+	img{
+		width:200px;
+		height:50px;
+	}
 }
 
+.navigation-toggle{
+	display:none;
+}
+
+.navigation-image{
+	@include  inline-block();
+	width:20%;
+}
 
 .menu-list{
 	@include inline-block();
-	width:70%;
+	width:80%;
 	@include align(right);
 }
 
@@ -19,7 +33,7 @@
 		@include rem("padding",12,10);
 		text-decoration: none;
 		display: block;
-		color: black;
+		color: #FCA001;
 		transition: all 0.3s;
 
 			&:hover,&:focus{
@@ -34,6 +48,62 @@
 
 }
 
+@include breakpoint($sassyMedSmall){
+	.navigation-image{
+		@include margin-auto();
+		display:block;
+		width:224px;
+	}
+
+	.navigation-toggle{
+		@include inline-block();
+		position:absolute;
+		height:50px;
+		width:40px;
+		color:black;
+		left:1%;
+		cursor:pointer
+		
+	}
+
+	.navigation-toggle-open{
+		.navigation-toggle{
+			background-image: url(../../assets/ic_close_24px.svg);
+			background-repeat: no-repeat;
+			background-size:cover;
+		}
+
+		.menu-list{
+			bottom: -200px;
+		}
+	}
+
+	.navigation-toggle-close{
+		.navigation-toggle{
+			background-image: url(../../assets/ic_menu_24px.svg);
+			background-repeat: no-repeat;
+			background-size:cover;
+		}
+
+		.menu-list{
+			bottom: 200px;
+		}
+	}
+
+	.menu-list{
+		position:absolute;
+		display:block;
+		width:$full-width;
+		z-index:3;
+		transition: 1s all;
+
+		li{
+			display:block;
+			background-color:white;
+			border-top:1px solid gold;
+		}
+	}
+}
 
 
 

@@ -122,7 +122,8 @@ var AppContainer = function (_React$Component) {
 
 		_this.state = {
 			chatArray: [],
-			doctor: _appstore2.default.getDoctorInfo()
+			doctor: _appstore2.default.getDoctorInfo(),
+			menuToggle: false
 		};
 		return _this;
 	}
@@ -137,7 +138,8 @@ var AppContainer = function (_React$Component) {
 	}, {
 		key: 'componentDidUpdate',
 		value: function componentDidUpdate() {
-			document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-thread').scrollHeight;
+			console.log(document.querySelector('.chat-callresponse').scrollHeight);
+			document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-callresponse').scrollHeight;
 		}
 	}, {
 		key: '_storeUpdate',
@@ -150,12 +152,23 @@ var AppContainer = function (_React$Component) {
 	}, {
 		key: 'onUserChoiceClick',
 		value: function onUserChoiceClick(event) {
-			var parentNode = event.target.parentNode.previousSibling;
 			var userChoiceText = event.target.textContent;
 			var userChoiceNumber = event.target.getAttribute('data-next');
 			var userChoiceObj = { message: [userChoiceText], type: 'user' };
 			_appactions2.default.addUserSection(userChoiceObj);
 			_appactions2.default.getSection(userChoiceNumber);
+		}
+	}, {
+		key: 'menuToggle',
+		value: function menuToggle(event) {
+			console.log('hey');
+
+			console.log(this.state.menuToggle);
+			if (this.state.menuToggle) {
+				this.setState({ menuToggle: false });
+			} else {
+				this.setState({ menuToggle: true });
+			}
 		}
 
 		//
@@ -166,10 +179,10 @@ var AppContainer = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'container app-container' },
-				_react2.default.createElement(_menuContainer2.default, null),
+				_react2.default.createElement(_menuContainer2.default, { toggle: this.state.menuToggle, clickToggle: this.menuToggle.bind(this) }),
 				_react2.default.createElement(
 					'section',
-					{ className: 'one-half-m' },
+					{ className: 'one-half-m doctor-container' },
 					_react2.default.createElement(_doctorContent2.default, { doctor: this.state.doctor })
 				),
 				_react2.default.createElement(
@@ -226,15 +239,12 @@ function ChatThread(props) {
 				return threadList.push(_react2.default.createElement(_chatmessageBot2.default, { key: val, text: val }));
 			});
 			val.button.forEach(function (val) {
-				return buttonOptions.push(_react2.default.createElement(_userButton2.default, { key: val.next, text: val.text, next: val.next, onchoice: props.onchoice }));
+				return buttonOptions.push(_react2.default.createElement(_userButton2.default, { key: val.next, text: val.text, next: val.next, onchoice: props.onchoice, datakey: val.key }));
 			});
 		} else {
-			(function () {
-				var number = Math.random();
-				val.message.forEach(function (val) {
-					return threadList.push(_react2.default.createElement(_chatmessageUser2.default, { key: val + number, text: val }));
-				});
-			})();
+			val.message.forEach(function (val) {
+				return threadList.push(_react2.default.createElement(_chatmessageUser2.default, { key: val + ' user', text: val }));
+			});
 		}
 	});
 
@@ -275,7 +285,7 @@ function ChatMessageBot(props) {
 		{ className: "chat-message-containerBot" },
 		_react2.default.createElement(
 			"div",
-			{ className: "chat-message-bot" },
+			{ className: "chat-message-bot chat-message-slidein-left" },
 			props.text
 		)
 	);
@@ -299,10 +309,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ChatMessageUser(props) {
 	return _react2.default.createElement(
 		"div",
-		{ className: "chat-message-containerUser" },
+		{ className: "chat-message-containerUser " },
 		_react2.default.createElement(
 			"div",
-			{ className: "chat-message-user" },
+			{ className: "chat-message-user chat-message-slidein-right" },
 			props.text
 		)
 	);
@@ -343,7 +353,7 @@ function DoctorContent(props) {
 			_react2.default.createElement(
 				"p",
 				{ className: "one-half-s" },
-				"I am a specialist in fertility. You can message me with questions and I'll respond to you by text within the day."
+				"I am a specialist in fertility. I'm here to answer your questions about egg freezing or general fertility health.  If you message me, I'll respond within a day, if not sooner."
 			),
 			_react2.default.createElement(
 				"div",
@@ -377,7 +387,9 @@ var _menuItem2 = _interopRequireDefault(_menuItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function MenuContainer() {
+function MenuContainer(props) {
+	var toggleClass = props.toggle ? 'navigation-toggle-open' : 'navigation-toggle-close';
+
 	var menuList = [{ text: 'My Profile', url: '/myprofile', icon: "fa-user" }, { text: 'Share', url: '/share', icon: "fa-bullhorn" }, { text: 'Appointment', url: 'appointment', icon: "fa-calendar" }, { text: 'Payment', url: '/payment', icon: "fa-credit-card" }];
 	var menuElements = menuList.map(function (val) {
 		return _react2.default.createElement(_menuItem2.default, { text: val.text, url: val.url, key: val.text, icon: val.icon });
@@ -387,8 +399,13 @@ function MenuContainer() {
 		null,
 		_react2.default.createElement(
 			'div',
-			{ className: 'navigation-content' },
-			_react2.default.createElement('img', { className: 'one-quarter-m', src: 'assets/Carrot_logo_rgb.png', width: '234', height: '50', alt: 'carrot logo' }),
+			{ className: 'navigation-content ' + toggleClass },
+			_react2.default.createElement(
+				'div',
+				{ className: 'navigation-image' },
+				_react2.default.createElement('div', { className: 'navigation-toggle', onClick: props.clickToggle }),
+				_react2.default.createElement('img', { className: 'one-quarter-m', src: 'assets/Carrot_logo_rgb.png', width: '200', height: '50', alt: 'carrot logo' })
+			),
 			_react2.default.createElement(
 				'ul',
 				{ className: 'menu-list' },
@@ -444,7 +461,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function AcceptButton(props) {
 	return _react2.default.createElement(
 		"button",
-		{ type: "button", className: "chat-optionButton", "data-next": props.next, onClick: props.onchoice },
+		{ type: "button", className: "chat-optionButton", "data-next": props.next, onClick: props.onchoice, "data-key": props.datakey },
 		props.text
 	);
 }

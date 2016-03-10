@@ -12,6 +12,7 @@ class AppContainer extends React.Component {
 		this.state = {
 			chatArray: [],
 			doctor: appStore.getDoctorInfo(),
+			menuToggle:false
 		};
 	}
 
@@ -22,7 +23,8 @@ class AppContainer extends React.Component {
 	}
 
 	componentDidUpdate(){
-		document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-thread').scrollHeight;
+			console.log(document.querySelector('.chat-callresponse').scrollHeight);
+			document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-callresponse').scrollHeight;	
 	}
 
 	_storeUpdate(){
@@ -33,7 +35,6 @@ class AppContainer extends React.Component {
 	}
 
 	onUserChoiceClick(event){
-		let parentNode = event.target.parentNode.previousSibling;
 		let userChoiceText = event.target.textContent;
 		let userChoiceNumber = event.target.getAttribute('data-next');
 		let userChoiceObj = {message : [userChoiceText], type: 'user'};
@@ -42,12 +43,24 @@ class AppContainer extends React.Component {
 
 	}
 
+	menuToggle(event){
+		console.log('hey');
+
+		console.log(this.state.menuToggle);
+		if(this.state.menuToggle){
+			this.setState({menuToggle:false});
+		}
+		else{
+			this.setState({menuToggle:true});
+		}
+	}
+
 	//
 	render() {
 		return (
 				<div className="container app-container">
-					<MenuContainer />
-					<section className="one-half-m">
+					<MenuContainer toggle={this.state.menuToggle} clickToggle={this.menuToggle.bind(this)} />
+					<section className="one-half-m doctor-container">
 						<DoctorContent doctor={this.state.doctor} />
 					</section>
 					<section className="one-half-m chat-container">

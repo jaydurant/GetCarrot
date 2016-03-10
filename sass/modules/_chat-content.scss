@@ -1,8 +1,7 @@
 .chat-container{
-	height: $full-height;
-	padding-left:5px;
+	@include rem("padding",0,5);
 	@include rem("margin-top",5);
-
+	height: $full-height;
 }
 
 .chat-thread{
@@ -37,6 +36,7 @@
 	font-weight:600;
 	font-size:14;
 	color:white;
+	position:relative;
 
 }
 
@@ -60,6 +60,7 @@
 	font-weight:600;
 	font-size:14;
 	color:white;
+	position:relative;
 }
 
 .chat-userOptions{
@@ -86,4 +87,33 @@
 		outline:none;
 	}
 }
+
+.chat-message-slidein-left{
+	animation: 0.6s linear 0s slidein-left;
+}
+
+@include keyframes(slidein-left){
+	from{
+		right:100%;
+	}
+	to{
+		right:0;
+	}
+}
+
+.chat-message-slidein-right{
+	animation: 0.4s linear 0s slidein-right;
+}
+
+@include keyframes(slidein-right){
+	from{
+		left:100%;
+	}
+	to{
+		left:0;
+	}
+}
+
+
+
 
