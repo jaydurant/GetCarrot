@@ -1,19 +1,20 @@
 
 .doctor-section{
-	background-color: #284254;
-	@include roundedCorners(20);
+	background-color: $container-background;
+	@include roundedCorners(10);
 	@include rem("margin-top",5);
+	border: 1px solid grey;
 
 	p{
 		@include rem("font-size",20);
-		color:white;	
+		color:black;	
 		text-align:center;
 	}	
 }
 
 .doctor-image{
 	@include margin-auto();
-	@include roundedCorners(50);
+	@include roundedCorners(100);
 	display: block;
 }
 
@@ -25,4 +26,19 @@
 		@include rem("font-size",17);
 	}
 
+}
+
+.doctor-button{
+	@include rem("margin",10,0);
+	@include rem("font-size",18);
+	@include rem("padding",15,70);
+	border:none;
+	color:white;
+	font-weight:500;
+	background-color:#E83B3B;
+
+	&:hover,&:focus{
+		background-color:#F5C75B;
+		outline:none;
+	}
 }

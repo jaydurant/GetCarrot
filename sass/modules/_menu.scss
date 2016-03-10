@@ -1,34 +1,37 @@
+.navigation-content{
+	background-color:white;
+	border-bottom: 1px solid gold;
+}
 
 
+.menu-list{
+	@include inline-block();
+	width:70%;
+	@include align(right);
+}
 
 .menu-links{
+	@include inline-block();
+	@include align(center);
 
 	a{
 		@include rem("font-size",20);
-		@include rem("padding",10,0,10,10);
-		background-color: #284254;
+		@include rem("padding",12,10);
 		text-decoration: none;
 		display: block;
-		color: white;
+		color: black;
 		transition: all 0.3s;
 
 			&:hover,&:focus{
-				color:black;
-				background-color: #6171A0;
+				color:white;
+				background-color: rgba(255, 188, 0, 0.4);
 			}
 	}
 }
 
-.menu-links:first-of-type a{
-	border-radius: 20px 20px 0 0;
-}
-
-.menu-links:last-of-type a{
-	border-radius: 0 0 20px 20px;
-}
 
 .fa{
-	margin-right:2%;
+
 }
 
 

@@ -143,50 +143,59 @@ button {
     width: 100%; } }
 
 .app-container {
-  background-color: #333348;
-  overflow: auto;
-  padding: 5px 5px 5px 5px;
-  padding: 0.3125rem 0.3125rem 0.3125rem 0.3125rem; }
+  background-color: white;
+  overflow: auto; }
 
-.menu-links a {
-  font-size: 20px;
-  font-size: 1.25rem;
-  padding: 10px 0px 10px 10px;
-  padding: 0.625rem 0rem 0.625rem 0.625rem;
-  background-color: #284254;
-  text-decoration: none;
-  display: block;
-  color: white;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
-  .menu-links a:hover, .menu-links a:focus {
+.navigation-content {
+  background-color: white;
+  border-bottom: 1px solid gold; }
+
+.menu-list {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  width: 70%;
+  text-align: right; }
+
+.menu-links {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  text-align: center; }
+  .menu-links a {
+    font-size: 20px;
+    font-size: 1.25rem;
+    padding: 12px 10px;
+    padding: 0.75rem 0.625rem;
+    text-decoration: none;
+    display: block;
     color: black;
-    background-color: #6171A0; }
-
-.menu-links:first-of-type a {
-  border-radius: 20px 20px 0 0; }
-
-.menu-links:last-of-type a {
-  border-radius: 0 0 20px 20px; }
-
-.fa {
-  margin-right: 2%; }
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+    .menu-links a:hover, .menu-links a:focus {
+      color: white;
+      background-color: rgba(255, 188, 0, 0.4); }
 
 .doctor-section {
-  background-color: #284254;
-  border-radius: 20px;
+  background-color: rgba(232, 133, 63, 0.15);
+  border-radius: 10px;
   margin-top: 5px;
-  margin-top: 0.3125rem; }
+  margin-top: 0.3125rem;
+  border: 1px solid grey; }
   .doctor-section p {
     font-size: 20px;
     font-size: 1.25rem;
-    color: white;
+    color: black;
     text-align: center; }
 
 .doctor-image {
   margin-left: auto;
   margin-right: auto;
-  border-radius: 50px;
+  border-radius: 100px;
   display: block; }
 
 .doctor-caption {
@@ -196,14 +205,32 @@ button {
     font-size: 17px;
     font-size: 1.0625rem; }
 
+.doctor-button {
+  margin: 10px 0px;
+  margin: 0.625rem 0rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 15px 70px;
+  padding: 0.9375rem 4.375rem;
+  border: none;
+  color: white;
+  font-weight: 500;
+  background-color: #E83B3B; }
+  .doctor-button:hover, .doctor-button:focus {
+    background-color: #F5C75B;
+    outline: none; }
+
 .chat-container {
   height: 100%;
-  padding-left: 5px; }
+  padding-left: 5px;
+  margin-top: 5px;
+  margin-top: 0.3125rem; }
 
 .chat-thread {
-  border-radius: 20px;
-  height: 100%;
-  background-color: #284254;
+  border-radius: 10px;
+  border: 1px solid grey;
+  height: 83.33333%;
+  background-color: rgba(232, 133, 63, 0.15);
   position: relative; }
 
 .chat-callresponse {
@@ -252,9 +279,9 @@ button {
 .chat-userOptions {
   height: 20%;
   text-align: center;
-  border-top: 1px solid white; }
+  border-top: 1px solid grey; }
 
-.chat-userOptions button:last-of-type {
+.chat-userOptions button {
   margin-left: 1%; }
 
 .chat-optionButton {
@@ -264,7 +291,6 @@ button {
   font-size: 0.9375rem;
   padding: 15px 15px 15px 15px;
   padding: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
-  border-radius: 10px;
   border: none;
   color: white;
   font-weight: 500;

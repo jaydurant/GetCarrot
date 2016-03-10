@@ -4,18 +4,20 @@ import MenuItem from './menu-item';
 function MenuContainer() {
 	const menuList = [
 		{ text: 'My Profile', url: '/myprofile', icon:"fa-user" },
-		{ text: 'Share with Friends', url: '/share',icon:"fa-bullhorn" },
-		{ text: 'Make an Appointment', url: 'appointment',icon:"fa-calendar" },
-		{ text: 'Daily Carrot Tips', url: '/dailytips',icon:"fa-sun-o" },
-		{ text: 'Chat with Expert', url: '/expertchat',icon:"fa-comment" },
+		{ text: 'Share', url: '/share',icon:"fa-bullhorn" },
+		{ text: 'Appointment', url: 'appointment',icon:"fa-calendar" },
+		{ text: 'Payment', url: '/payment',icon:"fa-credit-card" },
 	];
 	const menuElements = menuList.map((val) =>
 		<MenuItem text={val.text} url={val.url} key={val.text} icon={val.icon} />);
 	return (
 		<nav >
-			<ul>
-				{menuElements}
-			</ul>
+			<div className="navigation-content">
+				<img className="one-quarter-m" src="assets/Carrot_logo_rgb.png" width="234" height="50" alt="carrot logo" />
+				<ul className="menu-list">
+					{menuElements}
+				</ul>
+			</div>
 		</nav>
 		);
 }

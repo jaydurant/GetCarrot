@@ -166,10 +166,10 @@ var AppContainer = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'container app-container' },
+				_react2.default.createElement(_menuContainer2.default, null),
 				_react2.default.createElement(
 					'section',
 					{ className: 'one-half-m' },
-					_react2.default.createElement(_menuContainer2.default, null),
 					_react2.default.createElement(_doctorContent2.default, { doctor: this.state.doctor })
 				),
 				_react2.default.createElement(
@@ -343,7 +343,16 @@ function DoctorContent(props) {
 			_react2.default.createElement(
 				"p",
 				{ className: "one-half-s" },
-				"I am a gynecologist with a specialization in reproductive endocrinology. You can message me with questions and I'll respond to you by text within the day."
+				"I am a specialist in fertility. You can message me with questions and I'll respond to you by text within the day."
+			),
+			_react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"button",
+					{ className: "doctor-button", type: "button" },
+					"Enter Private Chat"
+				)
 			)
 		)
 	);
@@ -369,7 +378,7 @@ var _menuItem2 = _interopRequireDefault(_menuItem);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function MenuContainer() {
-	var menuList = [{ text: 'My Profile', url: '/myprofile', icon: "fa-user" }, { text: 'Share with Friends', url: '/share', icon: "fa-bullhorn" }, { text: 'Make an Appointment', url: 'appointment', icon: "fa-calendar" }, { text: 'Daily Carrot Tips', url: '/dailytips', icon: "fa-sun-o" }, { text: 'Chat with Expert', url: '/expertchat', icon: "fa-comment" }];
+	var menuList = [{ text: 'My Profile', url: '/myprofile', icon: "fa-user" }, { text: 'Share', url: '/share', icon: "fa-bullhorn" }, { text: 'Appointment', url: 'appointment', icon: "fa-calendar" }, { text: 'Payment', url: '/payment', icon: "fa-credit-card" }];
 	var menuElements = menuList.map(function (val) {
 		return _react2.default.createElement(_menuItem2.default, { text: val.text, url: val.url, key: val.text, icon: val.icon });
 	});
@@ -377,9 +386,14 @@ function MenuContainer() {
 		'nav',
 		null,
 		_react2.default.createElement(
-			'ul',
-			null,
-			menuElements
+			'div',
+			{ className: 'navigation-content' },
+			_react2.default.createElement('img', { className: 'one-quarter-m', src: 'assets/Carrot_logo_rgb.png', width: '234', height: '50', alt: 'carrot logo' }),
+			_react2.default.createElement(
+				'ul',
+				{ className: 'menu-list' },
+				menuElements
+			)
 		)
 	);
 }
@@ -407,7 +421,7 @@ function MenuItem(props) {
 			"a",
 			{ href: props.url, title: props.text },
 			_react2.default.createElement("i", { className: "fa " + props.icon }),
-			props.text
+			"   " + props.text
 		)
 	);
 }

@@ -46,8 +46,8 @@ class AppContainer extends React.Component {
 	render() {
 		return (
 				<div className="container app-container">
+					<MenuContainer />
 					<section className="one-half-m">
-						<MenuContainer />
 						<DoctorContent doctor={this.state.doctor} />
 					</section>
 					<section className="one-half-m chat-container">
