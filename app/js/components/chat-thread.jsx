@@ -2,28 +2,23 @@ import React from 'react';
 import UserButton from './user-button';
 import ChatMessageBot from './chatmessage-bot';
 import ChatMessageUser from './chatmessage-user';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ChatMessageBotGif from './chatmessage-bot-gif';
 
 function ChatThread(props) {
-
-	const threadList =[];
+	const threadList = [];
 	let buttonOptions;
 	props.chat.forEach((val) => {
-		if(val.type === "bot"){
+		if (val.type === 'bot') {
 			buttonOptions = [];
 			val.message.forEach((val) => {
-				if(/assets/i.test(val)){
+				if (/assets/i.test(val)) {
 					threadList.push(<ChatMessageBotGif key={val} src={val} />);
-				}
-				else{
+				} else {
 					threadList.push(<ChatMessageBot key={val} text={val} />);
 				}
 			});
 			val.button.forEach((val) => buttonOptions.push(<UserButton key={val.next} text={val.text} next={val.next} onchoice={props.onchoice} datakey={val.key} />));
-
-		}	
-		else{
+		} else {
 			val.message.forEach((val) => threadList.push(<ChatMessageUser key={`${val} user`}text={val} />));
 		}
 	});
@@ -39,5 +34,7 @@ function ChatThread(props) {
 		</div>
 		);
 }
+
+ChatThread.propTypes = { chat: React.PropTypes.object, onchoice: React.PropTypes.function };
 
 export default ChatThread;

@@ -18,4 +18,6 @@ function DoctorContent(props) {
 		);
 }
 
+DoctorContent.propTypes = { doctor: React.propType.object };
+
 export default DoctorContent;

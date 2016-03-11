@@ -12,50 +12,43 @@ class AppContainer extends React.Component {
 		this.state = {
 			chatArray: [],
 			doctor: appStore.getDoctorInfo(),
-			menuToggle:false
+			menuToggle: false,
 		};
 	}
 
 	componentDidMount() {
 		appStore.addChangeListener(this._storeUpdate.bind(this));
 		appActions.getDoctor();
-		appActions.getSection("1");
+		appActions.getSection('1');
 	}
 
-	componentDidUpdate(){
-			console.log(document.querySelector('.chat-callresponse').scrollHeight);
-			document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-callresponse').scrollHeight;	
+	componentDidUpdate() {
+		document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-callresponse').scrollHeight;
 	}
 
-	_storeUpdate(){
+	onUserChoiceClick(event) {
+		const userChoiceText = event.target.textContent;
+		const userChoiceNumber = event.target.getAttribute('data-next');
+		const userChoiceObj = { message: [userChoiceText], type: 'user' };
+		appActions.addUserSection(userChoiceObj);
+		appActions.getSection(userChoiceNumber);
+	}
+
+	_storeUpdate() {
 		this.setState({
 			chatArray: appStore.getSection(),
-			doctor: appStore.getDoctorInfo()
+			doctor: appStore.getDoctorInfo(),
 		});
 	}
 
-	onUserChoiceClick(event){
-		let userChoiceText = event.target.textContent;
-		let userChoiceNumber = event.target.getAttribute('data-next');
-		let userChoiceObj = {message : [userChoiceText], type: 'user'};
-		appActions.addUserSection(userChoiceObj);
-		appActions.getSection(userChoiceNumber);
-
-	}
-
-	menuToggle(event){
-		console.log('hey');
-
-		console.log(this.state.menuToggle);
-		if(this.state.menuToggle){
-			this.setState({menuToggle:false});
-		}
-		else{
-			this.setState({menuToggle:true});
+	menuToggle() {
+		if (this.state.menuToggle) {
+			this.setState({ menuToggle: false });
+		} else {
+			this.setState({ menuToggle: true });
 		}
 	}
 
-	//
 	render() {
 		return (
 				<div className="container app-container">

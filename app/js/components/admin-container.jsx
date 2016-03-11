@@ -11,4 +11,6 @@ function AdminContainer(props) {
 		);
 }
 
+AdminContainer.propTypes = { Menu: React.PropTypes.object, docInfo: React.PropTypes.object };
+
 export default AdminContainer;
