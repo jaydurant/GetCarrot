@@ -2,7 +2,7 @@ import React from 'react';
 
 function DoctorContent(props) {
 	return (
-		<section className="doctor-section">
+		<div className="doctor-section">
 			<div>
 				<img className="doctor-image" src={props.doctor.image} alt={`${props.doctor.name} image`} width="370" height= "240" />
 			</div>
@@ -14,7 +14,7 @@ function DoctorContent(props) {
 					<button className="doctor-button" type="button">Enter Private Chat</button>
 				</div>
 			</div>
-		</section>
+		</div>
 		);
 }
 

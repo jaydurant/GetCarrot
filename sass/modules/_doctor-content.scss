@@ -1,7 +1,7 @@
+//doctor section container styling
 .doctor-container{
 	@include rem("padding",0,5);
 }
-
 
 .doctor-section{
 	@extend %section-shadow;
@@ -20,6 +20,7 @@
 	@include roundedCorners(20);
 }
 
+//hero image for doctor section hero image
 .doctor-image{
 	@include margin-auto();
 	@include roundedCorners(10);
@@ -35,6 +36,7 @@
 	}
 }
 
+//doctor caption styling
 .doctor-caption{
 	@include align(center);
 	color:white;
@@ -46,6 +48,7 @@
 
 }
 
+//CTA styling for doctor section
 .doctor-button{
 	@extend %buttonBasic;
 	@include rem("margin",10,0);

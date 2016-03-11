@@ -370,7 +370,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function DoctorContent(props) {
 	return _react2.default.createElement(
-		"section",
+		"div",
 		{ className: "doctor-section" },
 		_react2.default.createElement(
 			"div",
