@@ -4,6 +4,7 @@ import ChatMessageBot from './chatmessage-bot';
 import ChatMessageUser from './chatmessage-user';
 import ChatMessageBotGif from './chatmessage-bot-gif';
 
+//Defines logic for chat thread thread which will pass data for the interactions of the bot and choices made by the user
 function ChatThread(props) {
 	const threadList = [];
 	let buttonOptions;
@@ -35,6 +36,6 @@ function ChatThread(props) {
 		);
 }
 
-ChatThread.propTypes = { chat: React.PropTypes.object, onchoice: React.PropTypes.function };
+ChatThread.propTypes = { chat: React.PropTypes.array, onchoice: React.PropTypes.func };
 
 export default ChatThread;

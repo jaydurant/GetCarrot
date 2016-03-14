@@ -1,5 +1,6 @@
 import React from 'react';
 
+//states component which will display gifs as messages
 function ChatMessageBotGif(props) {
 	return (
 		<div className="chat-message-containerBot">
@@ -8,7 +9,7 @@ function ChatMessageBotGif(props) {
 		);
 }
 
-ChatMessageBotGif.propTypes = { src: React.propTypes.string, text: React.propTypes.string };
+ChatMessageBotGif.propTypes = { src: React.PropTypes.string, text: React.PropTypes.string };
 
 export default ChatMessageBotGif;
 

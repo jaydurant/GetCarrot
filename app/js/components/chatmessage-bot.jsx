@@ -1,4 +1,5 @@
 import React from 'react';
+// stateless componenet which displays the text of the bot
 
 function ChatMessageBot(props) {
 	return (
@@ -8,6 +9,6 @@ function ChatMessageBot(props) {
 		);
 }
 
-ChatMessageBot.propTypes = { text: React.propTypes.string };
+ChatMessageBot.propTypes = { text: React.PropTypes.string };
 
 export default ChatMessageBot;

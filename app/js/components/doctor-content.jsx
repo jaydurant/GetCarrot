@@ -1,5 +1,5 @@
 import React from 'react';
-
+//stateless component which will show the image and text for the doctor component
 function DoctorContent(props) {
 	return (
 		<div className="doctor-section">
@@ -18,6 +18,6 @@ function DoctorContent(props) {
 		);
 }
 
-DoctorContent.propTypes = { doctor: React.propType.object };
+DoctorContent.propTypes = { doctor: React.PropTypes.object };
 
 export default DoctorContent;

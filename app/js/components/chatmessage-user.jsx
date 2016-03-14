@@ -1,4 +1,5 @@
 import React from 'react';
+//stateless component which will show the text of the option the user has chosen
 
 function ChatMessageUser(props) {
 	return (
@@ -8,6 +9,6 @@ function ChatMessageUser(props) {
 		);
 }
 
-ChatMessageUser.propTypes = { text: React.propTypes.string };
+ChatMessageUser.propTypes = { text: React.PropTypes.string };
 
 export default ChatMessageUser;

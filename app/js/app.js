@@ -19,6 +19,14 @@ var _xhr2 = _interopRequireDefault(_xhr);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+App Actions describe provides a interface for actions which will intereact with
+store which can be accessed by the view
+
+getSection - will invoke a xhr and retrieve the requested information for the automated chat
+getDoctor - will invoke a xhr and retrieve information regarding a doctor proide by the database
+addUserSection - will add a users chosen option to the chat interface
+*/
 var AppActions = {
 	getSection: function getSection(sectionNumber) {
 		(0, _xhr2.default)(JSON.parse, { url: './database/chat.json' }).then(function (data) {
@@ -112,6 +120,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/*
+App container contains the view logic for the application which will also request and add data to and from the store
+*/
+
 var AppContainer = function (_React$Component) {
 	_inherits(AppContainer, _React$Component);
 
@@ -127,6 +139,8 @@ var AppContainer = function (_React$Component) {
 		};
 		return _this;
 	}
+	//on mounting the component data will be requested and xhr requests will be made
+
 
 	_createClass(AppContainer, [{
 		key: 'componentDidMount',
@@ -135,11 +149,15 @@ var AppContainer = function (_React$Component) {
 			_appactions2.default.getDoctor();
 			_appactions2.default.getSection('1');
 		}
+		//upon component updating the scroll height of the chat thread will update
+
 	}, {
 		key: 'componentDidUpdate',
 		value: function componentDidUpdate() {
 			document.querySelector('.chat-callresponse').scrollTop = document.querySelector('.chat-callresponse').scrollHeight;
 		}
+		//onUserChoiceClick the users choice will be assesesed and the store will then access the
+
 	}, {
 		key: 'onUserChoiceClick',
 		value: function onUserChoiceClick(event) {
@@ -149,6 +167,9 @@ var AppContainer = function (_React$Component) {
 			_appactions2.default.addUserSection(userChoiceObj);
 			_appactions2.default.getSection(userChoiceNumber);
 		}
+
+		//will detect each store update and change the data contained in the view
+
 	}, {
 		key: '_storeUpdate',
 		value: function _storeUpdate() {
@@ -157,6 +178,8 @@ var AppContainer = function (_React$Component) {
 				doctor: _appstore2.default.getDoctorInfo()
 			});
 		}
+		//menu toggle will detect the state of the menu toggle icon and change the icon as ordered
+
 	}, {
 		key: 'menuToggle',
 		value: function menuToggle() {
@@ -225,6 +248,7 @@ var _chatmessageBotGif2 = _interopRequireDefault(_chatmessageBotGif);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//Defines logic for chat thread thread which will pass data for the interactions of the bot and choices made by the user
 function ChatThread(props) {
 	var threadList = [];
 	var buttonOptions = void 0;
@@ -264,7 +288,7 @@ function ChatThread(props) {
 	);
 }
 
-ChatThread.propTypes = { chat: _react2.default.PropTypes.object, onchoice: _react2.default.PropTypes.function };
+ChatThread.propTypes = { chat: _react2.default.PropTypes.array, onchoice: _react2.default.PropTypes.func };
 
 exports.default = ChatThread;
 
@@ -281,6 +305,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//states component which will display gifs as messages
 function ChatMessageBotGif(props) {
 	return _react2.default.createElement(
 		"div",
@@ -293,7 +318,7 @@ function ChatMessageBotGif(props) {
 	);
 }
 
-ChatMessageBotGif.propTypes = { src: _react2.default.propTypes.string, text: _react2.default.propTypes.string };
+ChatMessageBotGif.propTypes = { src: _react2.default.PropTypes.string, text: _react2.default.PropTypes.string };
 
 exports.default = ChatMessageBotGif;
 
@@ -310,6 +335,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// stateless componenet which displays the text of the bot
+
 function ChatMessageBot(props) {
 	return _react2.default.createElement(
 		"div",
@@ -322,7 +349,7 @@ function ChatMessageBot(props) {
 	);
 }
 
-ChatMessageBot.propTypes = { text: _react2.default.propTypes.string };
+ChatMessageBot.propTypes = { text: _react2.default.PropTypes.string };
 
 exports.default = ChatMessageBot;
 
@@ -339,6 +366,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//stateless component which will show the text of the option the user has chosen
+
 function ChatMessageUser(props) {
 	return _react2.default.createElement(
 		"div",
@@ -351,7 +380,7 @@ function ChatMessageUser(props) {
 	);
 }
 
-ChatMessageUser.propTypes = { text: _react2.default.propTypes.string };
+ChatMessageUser.propTypes = { text: _react2.default.PropTypes.string };
 
 exports.default = ChatMessageUser;
 
@@ -368,6 +397,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//stateless component which will show the image and text for the doctor component
 function DoctorContent(props) {
 	return _react2.default.createElement(
 		"div",
@@ -398,7 +428,7 @@ function DoctorContent(props) {
 	);
 }
 
-DoctorContent.propTypes = { doctor: _react2.default.propType.object };
+DoctorContent.propTypes = { doctor: _react2.default.PropTypes.object };
 
 exports.default = DoctorContent;
 
@@ -418,6 +448,8 @@ var _menuItem = require('./menu-item');
 var _menuItem2 = _interopRequireDefault(_menuItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//stateless component which will display the menu for the application
 
 function MenuContainer(props) {
 	var toggleClass = props.toggle ? 'navigation-toggle-open' : 'navigation-toggle-close';
@@ -447,7 +479,7 @@ function MenuContainer(props) {
 	);
 }
 
-MenuContainer.propTypes = { toggle: _react2.default.propType.boolean, clickToggle: _react2.default.propType.function };
+MenuContainer.propTypes = { toggle: _react2.default.PropTypes.bool, clickToggle: _react2.default.PropTypes.func };
 
 exports.default = MenuContainer;
 
@@ -464,6 +496,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//stateless component which will display the list items of the navigations ul
+
 function MenuItem(props) {
 	return _react2.default.createElement(
 		"li",
@@ -478,9 +512,8 @@ function MenuItem(props) {
 }
 
 MenuItem.propTypes = {
-	url: _react2.default.propType.string,
-	icon: _react2.default.propType.string,
-	text: _react2.default.propType.string
+	icon: _react2.default.PropTypes.string,
+	text: _react2.default.PropTypes.string
 };
 
 exports.default = MenuItem;
@@ -498,6 +531,8 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//stateless componenet which will display the options that the user can respond with
+
 function AcceptButton(props) {
 	return _react2.default.createElement(
 		"button",
@@ -507,10 +542,10 @@ function AcceptButton(props) {
 }
 
 AcceptButton.propTypes = {
-	next: _react2.default.propType.string,
-	onchoice: _react2.default.propType.string,
-	datakey: _react2.default.propType.string,
-	text: _react2.default.propType.string
+	next: _react2.default.PropTypes.string,
+	onchoice: _react2.default.PropTypes.func,
+	datakey: _react2.default.PropTypes.string,
+	text: _react2.default.PropTypes.string
 };
 
 exports.default = AcceptButton;
@@ -521,6 +556,8 @@ exports.default = AcceptButton;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+//designates teh app actions that can take place
+
 var appConstants = {
 	GET_SECTION: 'GET_SECTION',
 	GET_DOCTOR: 'GET_DOCTOR',
@@ -537,6 +574,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _flux = require('flux');
+
+//Dispatcher will record actions and the data assocated with the actions
 
 var appDispatcher = new _flux.Dispatcher();
 
@@ -572,8 +611,11 @@ var _events = require('events');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//Store contains interface and the data which allows the view to request data and changes to be me made to the dataa
+
 var CHANGE_EVENT = 'change';
 
+//_store serves as the source of truth for all data
 var _store = {
 	chat: [],
 	doctor: {}
@@ -599,6 +641,7 @@ var appStore = (0, _Object2.default)({}, _events.EventEmitter.prototype, {
 	}
 });
 
+//will register all data and actions being sent by actions and will invoke the proper function
 _appdispatcher2.default.register(function (payload) {
 	var action = payload.action;
 
@@ -626,6 +669,8 @@ exports.default = appStore;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+//using facade design patterns in order to create a interface for making xhr requests using the promise api
 function xhr(callback, _ref) {
 	var url = _ref.url;
 	var _ref$method = _ref.method;
@@ -636,6 +681,7 @@ function xhr(callback, _ref) {
 	return requestData(url, method, fileType).then(callback, console.log.bind(console)).catch(console.log.bind(console));
 }
 
+//low level interface for xhr requests, I do want to make this into a full fledged api for npm
 function requestData(url, method, fileType) {
 	return new Promise(function (success, failure) {
 		//initialize the XHR  request

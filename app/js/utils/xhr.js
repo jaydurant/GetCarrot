@@ -1,8 +1,10 @@
+
+//using facade design patterns in order to create a interface for making xhr requests using the promise api
 function xhr(callback,{url,method = 'GET',fileType = 'application/json'}){
 		return requestData(url,method,fileType).then(callback,console.log.bind(console)).catch(console.log.bind(console));
 }
 
-
+//low level interface for xhr requests, I do want to make this into a full fledged api for npm
 function requestData(url,method,fileType){
 	return new Promise(function(success,failure){
 		//initialize the XHR  request

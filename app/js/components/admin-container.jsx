@@ -2,6 +2,9 @@ import React from 'react';
 import DoctorContent from './doctor-content';
 import MenuContainer from './menu-container';
 
+/*
+AdminContainer provides the top-level container for the menu and doctor content'
+*/
 function AdminContainer(props) {
 	return (
 			<section>

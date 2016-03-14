@@ -1,4 +1,5 @@
 import React from 'react';
+//stateless component which will display the list items of the navigations ul
 
 function MenuItem(props) {
 	return (
@@ -12,9 +13,8 @@ function MenuItem(props) {
 }
 
 MenuItem.propTypes = {
-	url: React.propType.string,
-	icon: React.propType.string,
-	text: React.propType.string,
+	icon: React.PropTypes.string,
+	text: React.PropTypes.string,
 };
 
 export default MenuItem;

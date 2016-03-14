@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuItem from './menu-item';
+//stateless component which will display the menu for the application
 
 function MenuContainer(props) {
 	const toggleClass = props.toggle ? 'navigation-toggle-open' : 'navigation-toggle-close';
@@ -29,6 +30,6 @@ function MenuContainer(props) {
 		);
 }
 
-MenuContainer.propTypes = { toggle: React.propType.boolean, clickToggle: React.propType.function };
+MenuContainer.propTypes = { toggle: React.PropTypes.bool, clickToggle: React.PropTypes.func };
 
 export default MenuContainer;
