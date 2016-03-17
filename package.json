@@ -37,7 +37,21 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "node",
+      "es6",
+      "json"
+    ]
   },
   "repository": {
     "type": "git",
