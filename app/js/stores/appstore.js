@@ -3,8 +3,11 @@ import appConstants from '../constants/appconstants';
 import objectAssign from 'react/lib/Object.assign';
 import {EventEmitter} from 'events';
 
+//Store contains interface and the data which allows the view to request data and changes to be me made to the dataa
+
 const CHANGE_EVENT = 'change';
 
+//_store serves as the source of truth for all data
 const _store = {
 	chat : [],
 	doctor : {}
@@ -32,6 +35,7 @@ const appStore = objectAssign({},EventEmitter.prototype,{
 	}
 });
 
+//will register all data and actions being sent by actions and will invoke the proper function
 appDispatcher.register((payload) => {
 	const action = payload.action;
 

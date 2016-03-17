@@ -1,14 +1,15 @@
 import React from 'react';
 import MenuItem from './menu-item';
+//stateless component which will display the menu for the application
 
 function MenuContainer(props) {
 	const toggleClass = props.toggle ? 'navigation-toggle-open' : 'navigation-toggle-close';
 
 	const menuList = [
-		{ text: 'My Profile', url: '/myprofile', icon:"fa-user" },
-		{ text: 'Share', url: '/share',icon:"fa-bullhorn" },
-		{ text: 'Appointment', url: 'appointment',icon:"fa-calendar" },
-		{ text: 'Payment', url: '/payment',icon:"fa-credit-card" },
+		{ text: 'My Profile', url: '/myprofile', icon: 'fa-user' },
+		{ text: 'Share', url: '/share', icon: 'fa-bullhorn' },
+		{ text: 'Appointment', url: 'appointment', icon: 'fa-calendar' },
+		{ text: 'Payment', url: '/payment', icon: 'fa-credit-card' },
 	];
 	const menuElements = menuList.map((val) =>
 		<MenuItem text={val.text} url={val.url} key={val.text} icon={val.icon} />);
@@ -28,5 +29,7 @@ function MenuContainer(props) {
 		</nav>
 		);
 }
+
+MenuContainer.propTypes = { toggle: React.PropTypes.bool, clickToggle: React.PropTypes.func };
 
 export default MenuContainer;

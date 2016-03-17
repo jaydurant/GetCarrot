@@ -1,4 +1,5 @@
 import {Dispatcher} from 'flux';
+//Dispatcher will record actions and the data assocated with the actions
 
 const appDispatcher = new Dispatcher();
 
