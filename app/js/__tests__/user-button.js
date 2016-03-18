@@ -12,13 +12,11 @@ const fields = {
 	text: 'hey'
 };
 
-describe('UserButton', () => {
+describe ('UserButton', () => {
 	it('displays user button content with next parameters', () => {
 		const renderer = TestUtils.createRenderer();
 		renderer.render(<UserButton {...fields} />);
 		const renderedTree = renderer.getRenderOutput();
-
-		console.log(renderedTree.props.type);
 
 		expect(renderedTree.type).toBe('button');
 
