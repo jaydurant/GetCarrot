@@ -11,17 +11,15 @@ const fields = {
 };
 
 describe ('MenuItem', () => {
+	const renderer = TestUtils.createRenderer();
+	renderer.render(<MenuItem {...fields} />);
+	const renderedTree = renderer.getRenderOutput();
+
+	const li = renderedTree;
+	const anchor = renderedTree.props.children;
+	const anchorChildren  = anchor.props.children; 
 	it('displays a menu item content',() => {
-		const renderer = TestUtils.createRenderer();
-		renderer.render(<MenuItem {...fields} />);
-		const renderedTree = renderer.getRenderOutput();
-
-		const li = renderedTree;
-		const anchor = renderedTree.props.children;
-		const anchorChildren  = anchor.props.children; 
-
 		expect([anchor.props.href,anchor.props.title]).toEqual([fields.url,fields.text]);
-
 		expect(anchorChildren[0].props.className).toMatch(fields.icon);
 		expect(anchorChildren[1].trim()).toBe(fields.text);
 	});
