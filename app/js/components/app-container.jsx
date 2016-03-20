@@ -1,5 +1,4 @@
 import React from 'react';
-import {findDOMNode} from 'react-dom';
 import MenuContainer from './menu-container';
 import DoctorContent from './doctor-content';
 import ChatThread from './chat-thread';

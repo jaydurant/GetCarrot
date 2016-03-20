@@ -92,8 +92,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
 var _menuContainer = require('./menu-container');
 
 var _menuContainer2 = _interopRequireDefault(_menuContainer);
@@ -225,7 +223,7 @@ var AppContainer = function (_React$Component) {
 
 exports.default = AppContainer;
 
-},{"../actions/appactions":1,"../stores/appstore":14,"./chat-thread":4,"./doctor-content":8,"./menu-container":9,"react":461,"react-dom":305}],4:[function(require,module,exports){
+},{"../actions/appactions":1,"../stores/appstore":14,"./chat-thread":4,"./doctor-content":8,"./menu-container":9,"react":461}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -28,7 +28,7 @@ describe('AppContainer',() => {
 	});
 
 	//you will need to comment out componentDidUpdate as shallow render does not support refs
-	it('registers menu open', () => {
+	it('registers menu open --see comments', () => {
 		MenuContainer.props.clickToggle();
 		RenderedTree = renderer.getRenderOutput();
 		MenuContainer = RenderedTree.props.children[0];
