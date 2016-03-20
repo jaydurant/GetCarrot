@@ -92,6 +92,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 var _menuContainer = require('./menu-container');
 
 var _menuContainer2 = _interopRequireDefault(_menuContainer);
@@ -192,10 +194,14 @@ var AppContainer = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'container app-container' },
-				_react2.default.createElement(_menuContainer2.default, { toggle: this.state.menuToggle, clickToggle: this.menuToggle.bind(this) }),
+				_react2.default.createElement(_menuContainer2.default, { ref: function ref(comp) {
+						return _this2._Menu = comp;
+					}, toggle: this.state.menuToggle, clickToggle: this.menuToggle.bind(this) }),
 				_react2.default.createElement(
 					'div',
 					{ className: 'app-content' },
@@ -219,7 +225,7 @@ var AppContainer = function (_React$Component) {
 
 exports.default = AppContainer;
 
-},{"../actions/appactions":1,"../stores/appstore":14,"./chat-thread":4,"./doctor-content":8,"./menu-container":9,"react":461}],4:[function(require,module,exports){
+},{"../actions/appactions":1,"../stores/appstore":14,"./chat-thread":4,"./doctor-content":8,"./menu-container":9,"react":461,"react-dom":305}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -288,7 +294,10 @@ function ChatThread(props) {
 	);
 }
 
-ChatThread.propTypes = { chat: _react2.default.PropTypes.array, onchoice: _react2.default.PropTypes.func };
+ChatThread.propTypes = {
+	chat: _react2.default.PropTypes.array,
+	onchoice: _react2.default.PropTypes.func
+};
 
 exports.default = ChatThread;
 

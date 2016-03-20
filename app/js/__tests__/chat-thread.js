@@ -42,7 +42,6 @@ describe('ChatThread', ()=> {
 		const firstFieldsButton = fields.chat[0].button[0];
 		const firstButton = buttonListElement.props.children[0];
 
-		console.log(firstFieldsButton);
 		expect([firstButton.props.text,firstButton.props.next,firstButton.props.datakey]).toEqual([firstFieldsButton.text,firstFieldsButton.next,firstFieldsButton.key]);
 	});
 });
