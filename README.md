@@ -1,6 +1,9 @@
 # Project Overview
 The purpose of this project was to make a prototype mock of a web app which informs women of the infertility process through a chat like interface.
 
+## Project UI
+![Project UserInterface](http://jaydurant.github.io/GetCarrot/assets/screenshot.png)
+
 ## Use-Cases
 1. User sees chat from bot which says hello to the user and proceeds to engage them in conversation
 2. User can interact from bot responses
