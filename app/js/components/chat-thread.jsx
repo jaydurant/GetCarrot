@@ -36,6 +36,9 @@ function ChatThread(props) {
 		);
 }
 
-ChatThread.propTypes = { chat: React.PropTypes.array, onchoice: React.PropTypes.func };
+ChatThread.propTypes = { 
+	chat: React.PropTypes.array,
+	onchoice: React.PropTypes.func
+};
 
 export default ChatThread;

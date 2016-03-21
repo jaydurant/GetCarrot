@@ -192,10 +192,14 @@ var AppContainer = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'container app-container' },
-				_react2.default.createElement(_menuContainer2.default, { toggle: this.state.menuToggle, clickToggle: this.menuToggle.bind(this) }),
+				_react2.default.createElement(_menuContainer2.default, { ref: function ref(comp) {
+						return _this2._Menu = comp;
+					}, toggle: this.state.menuToggle, clickToggle: this.menuToggle.bind(this) }),
 				_react2.default.createElement(
 					'div',
 					{ className: 'app-content' },
@@ -288,7 +292,10 @@ function ChatThread(props) {
 	);
 }
 
-ChatThread.propTypes = { chat: _react2.default.PropTypes.array, onchoice: _react2.default.PropTypes.func };
+ChatThread.propTypes = {
+	chat: _react2.default.PropTypes.array,
+	onchoice: _react2.default.PropTypes.func
+};
 
 exports.default = ChatThread;
 

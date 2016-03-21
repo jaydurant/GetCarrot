@@ -57,7 +57,7 @@ class AppContainer extends React.Component {
 	render() {
 		return (
 				<div className="container app-container">
-					<MenuContainer toggle={this.state.menuToggle} clickToggle={this.menuToggle.bind(this)} />
+					<MenuContainer ref={ (comp) => this._Menu = comp} toggle={this.state.menuToggle} clickToggle={this.menuToggle.bind(this)} />
 					<div className="app-content">
 						<section className="one-half-m doctor-container">
 							<DoctorContent doctor={this.state.doctor} />
