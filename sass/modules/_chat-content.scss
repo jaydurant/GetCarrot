@@ -2,7 +2,7 @@
 .chat-container{
 	@include rem("padding",0,5);
 	@include rem("margin-top",5);
-	height: $full-height * .9;
+	height: $full-height * .92;
 }
 
 .chat-thread{
